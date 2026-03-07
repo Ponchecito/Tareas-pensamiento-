@@ -1,0 +1,21 @@
+n = int(input("Ingrese un número de 3 dígitos: "))
+if n >= 100 and n <= 999:
+    d1 = n // 100
+    d2 = (n // 10) % 10
+    d3 = n % 10
+    if d1 > d2:
+        temp = d1
+        d1 = d2
+        d2 = temp
+    if d1 > d3:
+        temp = d1
+        d1 = d3
+        d3 = temp
+    if d2 > d3:
+        temp = d2
+        d2 = d3
+        d3 = temp
+    print("forma ascendente:", d1, ",", d2, ",", d3)
+    print("forma descendente:", d3, ",", d2, ",", d1)
+else:
+    print("numero no valido")
