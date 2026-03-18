@@ -1,0 +1,43 @@
+def maya(n):
+    punto = "●"
+    barra = "__"
+    cero = "[0]"
+
+    if n == 0:
+        return cero
+
+    niveles = []
+
+    while n > 0:
+        residuo = n % 20
+        n = n // 20
+
+        if residuo == 0:
+            nivel = cero
+        else:
+            nivel = ""
+
+            # puntos (arriba)
+            puntos = residuo % 5
+            if puntos > 0:
+                nivel += punto * puntos + "\n"
+
+            # barras (abajo)
+            barras = residuo // 5
+            for i in range(barras):
+                nivel += barra + "\n"
+
+        niveles.append(nivel.strip())
+
+    # ordenar de arriba hacia abajo
+    resultado = ""
+    for nivel in reversed(niveles):
+        resultado += nivel + "\n\n"
+
+    return resultado
+
+
+# programa principal
+num = int(input("Ingresa un número: "))
+print("\nNúmero maya:\n")
+print(maya(num))
