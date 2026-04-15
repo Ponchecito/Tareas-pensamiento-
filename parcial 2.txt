@@ -1,0 +1,75 @@
+#tamano = int(input("Ingrese el tamaño del arreglo: "))
+#base = int(input("Ingrese el número base: "))
+
+#arreglo = []
+
+#for i in range(tamano):
+ #   valor = base + i   
+  #  arreglo.append(valor)
+
+#print("El arreglo es:")
+#print(arreglo)
+
+#tamano = int(input("Ingrese el tamaño de los vectores: "))
+
+#nombres = []
+#longitudes = []
+
+#for i in range(tamano):
+   # nombre = input(f"Ingrese el nombre {i+1}: ")
+  #  nombres.append(nombre)
+   # longitudes.append(len(nombre))  
+
+#print("\nResultados:")
+#for i in range(tamano):
+   # print(nombres[i], "tiene", longitudes[i], "letras")
+    
+    
+ #   n = int(input("Ingrese la cantidad de clientes: "))
+
+#evaluaciones = []
+#conteo = [0, 0, 0, 0, 0]
+
+# Registrar evaluaciones y contar
+#for i in range(n):
+   # nota = int(input("Cliente " + str(i+1) + ": "))
+    #evaluaciones.append(nota)
+    
+ #   if 1 <= nota <= 5:
+  #      conteo[nota - 1] += 1
+
+#print("\nRespuestas:")
+#print("Malo:", conteo[0])
+#print("Regular:", conteo[1])
+#print("Buena:", conteo[2])
+#print("Muy Buena:", conteo[3])
+#print("Excelente:", conteo[4])
+
+# Más frecuente
+#mayor = conteo[0]
+#pos = 0
+
+#for i in range(5):
+  #  if conteo[i] > mayor:
+  #      mayor = conteo[i]
+  #      pos = i
+
+#print("Más frecuente:", pos + 1)
+
+# Promedio
+#suma = 0
+#for x in evaluaciones:
+#    suma += x
+
+#promedio = suma / n
+
+# Porcentaje menor al promedio
+#menores = 0
+#for x in evaluaciones:
+ #   if x < promedio:
+  #      menores += 1
+
+#porcentaje = (menores * 100) / n
+
+#print("Promedio:", promedio)
+#print("Porcentaje menor al promedio:", porcentaje, "%")
