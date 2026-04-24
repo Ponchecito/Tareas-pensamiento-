@@ -1,0 +1,66 @@
+def metros_a_kilometros(valor):
+    return valor / 1000
+
+
+def kilometros_a_metros(valor):
+    return valor * 1000
+
+
+def gramos_a_kilogramos(valor):
+    return valor / 1000
+
+
+def kilogramos_a_gramos(valor):
+    return valor * 1000
+
+
+def libras_a_gramos(valor):
+    return valor * 453.592
+
+
+def gramos_a_libras(valor):
+    return valor / 453.592
+
+
+while True:
+
+    print("\n===== CONVERSOR =====")
+    print("1. Metros a Kilometros")
+    print("2. Kilometros a Metros")
+    print("3. Gramos a Kilogramos")
+    print("4. Kilogramos a Gramos")
+    print("5. Libras a Gramos")
+    print("6. Gramos a Libras")
+    print("7. Salir")
+
+    opcion = int(input("Seleccione una opcion: "))
+
+    if opcion == 7:
+        print("Programa finalizado")
+        break
+
+    valor = float(input("Ingrese el valor: "))
+
+    if opcion == 1:
+        resultado = metros_a_kilometros(valor)
+
+    elif opcion == 2:
+        resultado = kilometros_a_metros(valor)
+
+    elif opcion == 3:
+        resultado = gramos_a_kilogramos(valor)
+
+    elif opcion == 4:
+        resultado = kilogramos_a_gramos(valor)
+
+    elif opcion == 5:
+        resultado = libras_a_gramos(valor)
+
+    elif opcion == 6:
+        resultado = gramos_a_libras(valor)
+
+    else:
+        print("Opcion incorrecta")
+        continue
+
+    print("Resultado:", resultado
