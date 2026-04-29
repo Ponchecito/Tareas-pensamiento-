@@ -1,0 +1,42 @@
+def leer_matriz(filas, columnas, nombre):
+    matriz = []
+    print(f"\nIngrese datos de la matriz {nombre}:")
+    for f in range(filas):
+        fila = []
+        for c in range(columnas):
+            valor = int(input(f"{nombre}[{f}][{c}]: "))
+            fila.append(valor)
+        matriz.append(fila)
+    return matriz
+
+
+def restar_matrices(m1, m2):
+    filas = len(m1)
+    columnas = len(m1[0])
+    
+    resultado = []
+    
+    for f in range(filas):
+        fila = []
+        for c in range(columnas):
+            fila.append(m1[f][c] - m2[f][c])
+        resultado.append(fila)
+    
+    return resultado
+
+
+# 1. Tamaño
+filas = int(input("Ingrese número de filas: "))
+columnas = int(input("Ingrese número de columnas: "))
+
+# 2. Llenar matrices
+matriz1 = leer_matriz(filas, columnas, "A")
+matriz2 = leer_matriz(filas, columnas, "B")
+
+# 3. Restar
+resultado = restar_matrices(matriz1, matriz2)
+
+# Mostrar resultado
+print("\nResultado de A - B:")
+for fila in resultado:
+    print(fila)
