@@ -1,0 +1,55 @@
+# Definir la matriz 3x3 con valores más grandes
+matriz = [
+    [10, 20, 30],
+    [40, 50, 60],
+    [70, 80, 90]
+]
+
+# Suma de filas
+filas = [sum(fila) for fila in matriz]
+
+# Suma de columnas
+columnas = [sum(matriz[i][j] for i in range(3)) for j in range(3)]
+
+# Mostrar resultados
+print("Suma de filas:", filas)
+print("Suma de columnas:", columnas)
+
+
+
+
+
+
+
+# Leer matriz 3x3
+matriz = []
+
+print("Ingresa los números de la matriz 3x3:")
+for i in range(3):
+    fila = list(map(int, input(f"Fila {i+1}: ").split()))
+    matriz.append(fila)
+
+# Suma de referencia (primera fila)
+suma_magica = sum(matriz[0])
+
+# Verificar filas
+for fila in matriz:
+    if sum(fila) != suma_magica:
+        print("No es un cuadrado mágico")
+        exit()
+
+# Verificar columnas
+for j in range(3):
+    suma_col = sum(matriz[i][j] for i in range(3))
+    if suma_col != suma_magica:
+        print("No es un cuadrado mágico")
+        exit()
+
+# Verificar diagonales
+diag1 = sum(matriz[i][i] for i in range(3))
+diag2 = sum(matriz[i][2 - i] for i in range(3))
+
+if diag1 != suma_magica or diag2 != suma_magica:
+    print("No es un cuadrado mágico")
+else:
+    print("Sí es un cuadrado mágico")
