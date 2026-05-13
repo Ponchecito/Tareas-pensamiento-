@@ -1,0 +1,128 @@
+# Hoja de trabajo 13-05 - Laboratorio
+
+# Días de la semana
+dias = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes"]
+
+# Datos simulados
+niveles_azucar = [130, 160, 95, 175, 160]      # mg/dL
+niveles_sal = [2000, 2400, 1800, 2400, 2700]  # mg
+
+# Presión sistólica
+presion_sistolica = [115, 130, 110, 125, 175]
+
+# Presión diastólica
+presion_diastolica = [75, 85, 70, 78, 95]
+
+# Variables para promedios
+suma_azucar = 0
+suma_sal = 0
+suma_sistolica = 0
+suma_diastolica = 0
+
+print("========== REPORTE SEMANAL DE SALUD ==========\n")
+
+# Recorrer todos los días
+for i in range(len(dias)):
+
+    print(f"--- {dias[i]} ---")
+
+    azucar = niveles_azucar[i]
+    sal = niveles_sal[i]
+    sistolica = presion_sistolica[i]
+    diastolica = presion_diastolica[i]
+
+    # Acumuladores
+    suma_azucar += azucar
+    suma_sal += sal
+    suma_sistolica += sistolica
+    suma_diastolica += diastolica
+
+    # Mostrar datos
+    print(f"Azúcar en sangre: {azucar} mg/dL")
+    print(f"Consumo de sal: {sal} mg")
+    print(f"Presión arterial: {sistolica}/{diastolica} mmHg")
+
+    # =========================
+    # Evaluación de azúcar
+    # =========================
+    if 70 <= azucar <= 140:
+        print("Azúcar: NORMAL")
+    else:
+        print("ALERTA: Nivel de azúcar fuera del rango saludable")
+
+    # =========================
+    # Evaluación de sal
+    # =========================
+    if sal <= 2300:
+        print("Sal: NORMAL")
+    else:
+        print("ALERTA: Consumo elevado de sal")
+
+    # =========================
+    # Clasificación presión arterial
+    # =========================
+    if sistolica < 120 and diastolica < 80:
+        categoria = "Normal"
+
+    elif 120 <= sistolica <= 129 and diastolica < 80:
+        categoria = "Elevada"
+
+    elif (130 <= sistolica <= 139) or (80 <= diastolica <= 89):
+        categoria = "Hipertensión Etapa 1"
+
+    elif sistolica >= 140 or diastolica >= 90:
+        categoria = "Hipertensión Etapa 2"
+
+    else:
+        categoria = "No clasificada"
+
+    print(f"Clasificación de presión arterial: {categoria}")
+
+    # Alertas médicas
+    if categoria == "Hipertensión Etapa 1":
+        print("ALERTA: Se recomienda control médico")
+
+    elif categoria == "Hipertensión Etapa 2":
+        print("ALERTA GRAVE: Requiere intervención médica")
+
+    print("\n")
+
+# ==================================
+# PROMEDIOS SEMANALES
+# ==================================
+promedio_azucar = suma_azucar / len(dias)
+promedio_sal = suma_sal / len(dias)
+promedio_sistolica = suma_sistolica / len(dias)
+promedio_diastolica = suma_diastolica / len(dias)
+
+print("========== PROMEDIOS SEMANALES ==========")
+
+print(f"Promedio azúcar: {promedio_azucar:.2f} mg/dL")
+print(f"Promedio sal: {promedio_sal:.2f} mg")
+print(f"Promedio presión arterial: "
+      f"{promedio_sistolica:.2f}/{promedio_diastolica:.2f} mmHg")
+
+# Evaluación final de promedios
+print("\n========== EVALUACIÓN GENERAL ==========")
+
+if 70 <= promedio_azucar <= 140:
+    print("Promedio de azúcar: NORMAL")
+else:
+    print("Promedio de azúcar: FUERA DE RANGO")
+
+if promedio_sal <= 2300:
+    print("Promedio de sal: NORMAL")
+else:
+    print("Promedio de sal: EXCESIVO")
+
+if promedio_sistolica < 120 and promedio_diastolica < 80:
+    print("Presión arterial promedio: NORMAL")
+
+elif 120 <= promedio_sistolica <= 129 and promedio_diastolica < 80:
+    print("Presión arterial promedio: ELEVADA")
+
+elif (130 <= promedio_sistolica <= 139) or (80 <= promedio_diastolica <= 89):
+    print("Presión arterial promedio: HIPERTENSIÓN ETAPA 1")
+
+elif promedio_sistolica >= 140 or promedio_diastolica >= 90:
+    print("Presión arterial promedio: HIPERTENSIÓN ETAPA 2")
